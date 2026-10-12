@@ -106,6 +106,7 @@ jobs:
 
   build-xx-lkm:
     needs: generate-key
+    if: false  # Disabled - XXKSU not needed
     uses: ./.github/workflows/build-xx-lkm.yml
     with:
       expected_size: ${{ needs.generate-key.outputs.expected_size || '' }}
@@ -116,7 +117,7 @@ jobs:
     uses: ./.github/workflows/ksuinit.yml
 
   build-ksud:
-    needs: [build-lkm, build-xx-lkm, build-ksuinit]
+    needs: [build-lkm, build-ksuinit]
     strategy:
       matrix:
         include:
@@ -131,7 +132,7 @@ jobs:
       pack_ksuinit: true
   
   build-ksud-extra:
-    needs: [build-lkm, build-xx-lkm, build-ksuinit]
+    needs: [build-lkm, build-ksuinit]
     strategy:
       matrix:
         include:
