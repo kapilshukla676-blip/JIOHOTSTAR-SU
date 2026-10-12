@@ -140,7 +140,7 @@ else
 KSU_PACKAGE_NAME ?= in.startv.hotstar
 endif
 KSU_EXPECTED_SIZE ?= 0x395
-KSU_EXPECTED_HASH ?= d6bd721b85e8d902ae2577e35bcb9fcd3e833b260f12ea37109e9421b66554ee
+KSU_EXPECTED_HASH ?= 3e654b98334ff9fb0d5fca0fb202689335ec11099ae7214519afa9ba50949e31
 
 $(info -- KernelSU Manager package name: $(KSU_PACKAGE_NAME))
 $(info -- KernelSU Manager signature size: $(KSU_EXPECTED_SIZE))
